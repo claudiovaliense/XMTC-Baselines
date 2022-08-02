@@ -1,0 +1,27 @@
+defaults:
+  - _self_
+  - model: XR-TFMR
+  - data: EURLEX57K
+
+tasks: [ "preprocess" ]
+
+
+log:
+  dir: resource/log/
+
+model_checkpoint:
+  dir: resource/model_checkpoint/
+
+prediction:
+  dir: resource/prediction/
+
+stat:
+  dir: resource/stat/
+
+
+
+
+
+
+
+
