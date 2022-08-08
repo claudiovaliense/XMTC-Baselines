@@ -1,10 +1,15 @@
 defaults:
   - _self_
   - model: XR-TFMR
-  - data: EURLEX57K
+  - data: Wiki10-31k
 
-tasks: [ "preprocess" ]
+tasks: ["predict"]
 
+
+eval:
+  metrics: ["mrr","ndcg","precision","recall"]
+  thresholds: [1,5,10]
+  label_cls: ["all", "full", "few", "tail"]
 
 log:
   dir: resource/log/
@@ -15,8 +20,11 @@ model_checkpoint:
 prediction:
   dir: resource/prediction/
 
-stat:
-  dir: resource/stat/
+ranking:
+  dir: resource/ranking/
+
+result:
+  dir: resource/result/
 
 
 

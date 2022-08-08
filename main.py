@@ -2,6 +2,7 @@ import hydra
 import os
 from omegaconf import OmegaConf
 
+from source.helper.EvalHelper import EvalHelper
 from source.helper.FitHelper import FitHelper
 from source.helper.PredictHelper import PredictHelper
 from source.helper.PreprocessHelper import PreprocessHelper
@@ -19,9 +20,10 @@ def predict(params):
     predict_helper = PredictHelper(params)
     predict_helper.perform_predict()
 
-# def eval(params):
-#     eval_helper = EvalHelper(params)
-#     eval_helper.perform_eval()
+def eval(params):
+    eval_helper = EvalHelper(params)
+    eval_helper.perform_eval()
+
 
 @hydra.main(config_path="settings", config_name="settings.yaml", version_base=None)
 def perform_tasks(params):
@@ -38,8 +40,7 @@ def perform_tasks(params):
         predict(params)
 
     if "eval" in params.tasks:
-        pass
-        # eval(params)
+        eval(params)
 
 if __name__ == '__main__':
     perform_tasks()

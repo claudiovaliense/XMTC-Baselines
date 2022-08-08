@@ -1,0 +1,5 @@
+name: Wiki10-31k
+dir: resource/dataset/Wiki10-31k/
+num_labels: 30938
+folds: [0,1,2,3,4]
+

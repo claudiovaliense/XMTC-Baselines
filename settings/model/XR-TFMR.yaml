@@ -6,8 +6,8 @@ train_params:
     __meta__:
       class_fullname: pecos.xmc.base###HierarchicalKMeans.TrainParams
     nr_splits: 16
-    min_codes:
-    max_leaf_size: 100
+    min_codes: 128
+    max_leaf_size: 16
     imbalanced_ratio: 0
     imbalanced_depth: 100
     spherical: true
@@ -42,7 +42,7 @@ train_params:
     max_num_labels_in_gpu: 65536
     max_steps: 0
     max_no_improve_cnt: -1
-    num_train_epochs: 1
+    num_train_epochs: 5
     gradient_accumulation_steps: 1
     weight_decay: 0
     max_grad_norm: 1
