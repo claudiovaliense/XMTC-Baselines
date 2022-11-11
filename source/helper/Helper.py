@@ -122,9 +122,10 @@ class Helper:
             sep='\t', index=False, header=True)
 
     # ranking
-    def checkpoint_ranking(self, ranking):
+    def checkpoint_rankings(self, ranking):
         ranking_path = f"{self.params.ranking.dir}" \
                        f"{self.params.model.name}_" \
                        f"{self.params.data.name}.rnk"
         with open(ranking_path, "wb") as ranking_file:
             pickle.dump(ranking, ranking_file)
+

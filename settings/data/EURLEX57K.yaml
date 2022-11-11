@@ -1,6 +1,6 @@
 name: EURLEX57K
 dir: resource/dataset/Eurlex57k/
-folds: [0]
+folds: [0,1,2,3,4]
 max_features: 50000
 num_labels: 4271
 

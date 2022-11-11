@@ -46,6 +46,7 @@ class EvalHelper:
 
 
         results = []
+        rankings = []
 
         for fold_id in self.helper.params.data.folds:
             print(
@@ -63,10 +64,12 @@ class EvalHelper:
                 result = evaluate(qrels, run, self.metrics, threads=12)
                 result["fold"]=fold_id
                 result["cls"]=cls
+                rankings.append(ranking)
                 results.append(result)
 
 
         self.helper.checkpoint_results(results)
+        self.helper.checkpoint_rankings(rankings)
 
     def _load_relevance_map(self):
         with open(f"{self.params.data.dir}relevance_map.pkl", "rb") as relevances_file:
