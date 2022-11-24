@@ -61,7 +61,7 @@ class EvalHelper:
                 filtered_dictionary = {key: value for key, value in self.relevance_map.items() if key in ranking.keys()}
                 qrels = Qrels(filtered_dictionary, name=cls)
                 run = Run(ranking, name=cls)
-                result = evaluate(qrels, run, self.metrics, threads=12)
+                result = evaluate(qrels, run, self.metrics, threads=1)
                 result["fold"]=fold_id
                 result["cls"]=cls
                 rankings.append(ranking)
