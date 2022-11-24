@@ -34,7 +34,7 @@ class Helper:
         rows, cols, data = [], [], []
 
         for row_idx, row in samples_df.iterrows():
-            for label_idx in row["label_ids"]:
+            for label_idx in row["labels_ids"]:
                 rows.append(row_idx)
                 cols.append(label_idx)
                 data.append(1.0)
